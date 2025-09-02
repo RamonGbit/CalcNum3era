@@ -1,0 +1,74 @@
+Números escaneados:
+
+Valor: 28
+Cifras significativas: 2
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 4
+Cifras significativas: 1
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: -28
+Cifras significativas: 3
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 28
+Cifras significativas: 2
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 9
+Cifras significativas: 1
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: -26
+Cifras significativas: 3
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 24
+Cifras significativas: 2
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 22
+Cifras significativas: 2
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 8
+Cifras significativas: 1
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 24
+Cifras significativas: 2
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: -9
+Cifras significativas: 2
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        
+Valor: 21
+Cifras significativas: 2
+Sistemas numéricos posibles: decimal, hexadecimal
+Bases posibles: base 10, base 16
+Operaciones elementales que se pueden realizar en este sistema: +, -, *, //
+        

@@ -1,0 +1,106 @@
+--- REPORTE DE OPERACIONES MATRICIALES Y SISTEMAS ---
+Fecha: 2025-07-25
+--- MATRICES ORIGINALES ---
+
+Matriz A (3x4):
+  [      28        4      -28 |      28 ]
+  [       9      -26       24 |      22 ]
+  [       8       24       -9 |      21 ]
+
+Matriz B (3x4):
+  [     -12      -29      -26 |     -20 ]
+  [      28      -21       23 |       3 ]
+  [      -3      -15      -27 |       9 ]
+
+Matriz C (3x4):
+  [      24      -30        3 |     -19 ]
+  [      -2       -7      -20 |      13 ]
+  [      15        6       11 |      23 ]
+
+
+--- RESOLUCION DE FORMULAS CON MATRICES ---
+
+Formula 1: R1 = B + 4 * C - B
+
+Resultado de Formula 1 (R1):
+Resultado1 = {
+  [      96     -120       12 |     -76 ]
+  [      -8      -28      -80 |      52 ]
+  [      60       24       44 |      92 ]
+}
+
+Formula 2: R2 = 3 * A - C
+
+Resultado de Formula 2 (R2):
+Resultado2 = {
+  [      60       42      -87 |     103 ]
+  [      29      -71       92 |      53 ]
+  [       9       66      -38 |      40 ]
+}
+
+Formula 3: R3 = 4 * A + 5 * A - A
+
+Resultado de Formula 3 (R3):
+Resultado3 = {
+  [     224       32     -224 |     224 ]
+  [      72     -208      192 |     176 ]
+  [      64      192      -72 |     168 ]
+}
+
+
+--- RESOLUCION DE SISTEMAS POR GAUSS-JORDAN ---
+
+Sistema 1:
+  96x - 120y + 12z = -76
+  --8x - 28y - 80z = 52
+  60x + 24y + 44z = 92
+
+Matriz Aumentada del Sistema 1:
+  [      96     -120       12 |     -76 ]
+  [      -8      -28      -80 |      52 ]
+  [      60       24       44 |      92 ]
+
+Solucion del Sistema 1:
+Punto solucion: A = (809/434, 1264/641, -919/602)
+
+Sistema 2:
+  60x + 42y - 87z = 103
+  29x - 71y + 92z = 53
+  9x + 66y - 38z = 40
+
+Matriz Aumentada del Sistema 2:
+  [      60       42      -87 |     103 ]
+  [      29      -71       92 |      53 ]
+  [       9       66      -38 |      40 ]
+
+Solucion del Sistema 2:
+Punto solucion: B = (1237/644, 328/557, 156/367)
+
+Sistema 3:
+  224x + 32y - 224z = 224
+  72x - 208y + 192z = 176
+  64x + 192y - 72z = 168
+
+Matriz Aumentada del Sistema 3:
+  [     224       32     -224 |     224 ]
+  [      72     -208      192 |     176 ]
+  [      64      192      -72 |     168 ]
+
+Solucion del Sistema 3:
+Punto solucion: C = (1627/899, 442/727, 347/387)
+
+
+--- CALCULO DE DISTANCIAS ENTRE PUNTOS ---
+
+Puntos Definidos:
+Punto A = (1.864055538286188, 1.9719200082892965, -1.526577556729873)
+Punto B = (1.920807240946633, 0.5888684128550674, 0.42506790570931985)
+Punto C = (1.8097858125368442, 0.6079779917469054, 0.8966398113578308)
+
+Distancia entre A y B: d(A, B) = 2.393
+Distancia entre A y C: d(A, C) = 2.781
+Distancia entre B y C: d(B, C) = 0.485
+
+Conjunto de Distancias Unicas:
+D = { 0.485, 2.393, 2.781 }
+

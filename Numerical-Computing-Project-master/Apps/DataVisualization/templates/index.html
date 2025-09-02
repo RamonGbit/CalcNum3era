@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Proyecto de Cálculo Numérico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #24292f;
+        }
+        .graph-container {
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+        .graph-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        .data-section {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .data-item {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Numerical Computing Project</h1>
+
+        {% if alert_message %}
+            <div class="alert">
+                {{ alert_message }}
+            </div>
+        {% endif %}
+
+        <div class="graph-container">
+            <h2>Visualización 3D de Puntos</h2>
+            {% if plot_url %}
+                <img src="{{ plot_url }}" alt="Gráfico 3D de Puntos y Distancias">
+            {% else %}
+                <p>No hay gráfico disponible para mostrar.</p>
+            {% endif %}
+        </div>
+
+        <div class="data-section">
+            <h2>Puntos Calculados</h2>
+            {% if plot_results %}
+                {% for point in plot_results %}
+                    <div class="data-item">
+                        <h3>Punto {{ forloop.counter }}</h3>
+                        <p><strong>Nombre:</strong> {{ point.name }}</p>
+                        <p><strong>Posición:</strong> ({{ point.position.0|floatformat:2 }}, {{ point.position.1|floatformat:2 }}, {{ point.position.2|floatformat:2 }})</p>
+                        {% if point.distancesBetweenPoints %}
+                            <p><strong>Distancias a otros puntos:</strong></p>
+                            <ul>
+                                {% for other_name, distance in point.distancesBetweenPoints.items %}
+                                    <li>{{ other_name }}: {{ distance|floatformat:4 }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No hay datos disponibles para mostrar.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

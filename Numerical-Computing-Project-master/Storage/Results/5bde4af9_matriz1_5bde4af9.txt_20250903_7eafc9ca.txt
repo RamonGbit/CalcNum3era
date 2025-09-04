@@ -1,0 +1,106 @@
+--- REPORTE DE OPERACIONES MATRICIALES Y SISTEMAS ---
+Fecha: 2025-09-03
+--- MATRICES ORIGINALES ---
+
+Matriz A (3x4):
+  [      -9      -11        6 |       3 ]
+  [     -14      -13      -19 |      -3 ]
+  [      -6        7       20 |      10 ]
+
+Matriz B (3x4):
+  [      30       14        5 |      28 ]
+  [      -9      -17       24 |      -6 ]
+  [      25        1       23 |       9 ]
+
+Matriz C (3x4):
+  [      23      -29        2 |      27 ]
+  [      18       13      -29 |       6 ]
+  [      17      -19        0 |     -15 ]
+
+
+--- RESOLUCION DE FORMULAS CON MATRICES ---
+
+Formula 1: R1 = A + B - B
+
+Resultado de Formula 1 (R1):
+Resultado1 = {
+  [      -9      -11        6 |       3 ]
+  [     -14      -13      -19 |      -3 ]
+  [      -6        7       20 |      10 ]
+}
+
+Formula 2: R2 = B - 3 * C + B
+
+Resultado de Formula 2 (R2):
+Resultado2 = {
+  [      -9      115        4 |     -25 ]
+  [     -72      -73      135 |     -30 ]
+  [      -1       59       46 |      63 ]
+}
+
+Formula 3: R3 = B + 2 * C
+
+Resultado de Formula 3 (R3):
+Resultado3 = {
+  [      76      -44        9 |      82 ]
+  [      27        9      -34 |       6 ]
+  [      59      -37       23 |     -21 ]
+}
+
+
+--- RESOLUCION DE SISTEMAS POR GAUSS-JORDAN ---
+
+Sistema 1:
+  --9x - 11y + 6z = 3
+  --14x - 13y - 19z = -3
+  --6x + 7y + 20z = 10
+
+Matriz Aumentada del Sistema 1:
+  [      -9      -11        6 |       3 ]
+  [     -14      -13      -19 |      -3 ]
+  [      -6        7       20 |      10 ]
+
+Solucion del Sistema 1:
+Punto solucion: A = (-81/202, 214/971, 59/195)
+
+Sistema 2:
+  --9x + 115y + 4z = -25
+  --72x - 73y + 135z = -30
+  --1x + 59y + 46z = 63
+
+Matriz Aumentada del Sistema 2:
+  [      -9      115        4 |     -25 ]
+  [     -72      -73      135 |     -30 ]
+  [      -1       59       46 |      63 ]
+
+Solucion del Sistema 2:
+Punto solucion: B = (2907/914, -19/980, 221/151)
+
+Sistema 3:
+  76x - 44y + 9z = 82
+  27x + 9y - 34z = 6
+  59x - 37y + 23z = -21
+
+Matriz Aumentada del Sistema 3:
+  [      76      -44        9 |      82 ]
+  [      27        9      -34 |       6 ]
+  [      59      -37       23 |     -21 ]
+
+Solucion del Sistema 3:
+Punto solucion: C = (-688/135, -5766/473, -5029/675)
+
+
+--- CALCULO DE DISTANCIAS ENTRE PUNTOS ---
+
+Puntos Definidos:
+Punto A = (-0.4009889333647281, 0.22039086413939254, 0.3025665175417942)
+Punto B = (3.1805243811919697, -0.019387614505598037, 1.4635737747178754)
+Punto C = (-5.096299334609422, -12.1902743596755, -7.450369155045114)
+
+Distancia entre A y B: d(A, B) = 3.773
+Distancia entre A y C: d(A, C) = 15.368
+Distancia entre B y C: d(B, C) = 17.207
+
+Conjunto de Distancias Unicas:
+D = { 15.368, 17.207, 3.773 }
+

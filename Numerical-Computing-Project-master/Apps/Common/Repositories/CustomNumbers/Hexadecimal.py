@@ -1,25 +1,53 @@
 import numpy as np
 from Apps.Common.Repositories.CustomNumbers.Number import Number
+from Apps.Common.Repositories.FileManager import FileManager
 
 class Hexadecimal(Number):
     _digits = np.array(
         ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
     )
     _base = len(_digits)
+    path = ".\Apps\Common\Repositories\Errors"
+    fileManager = FileManager(path)
 
     def __init__(self, value: str):
-        super().__init__(value)
+        try:
+            super().__init__(value)
+        except Exception as error:
+            from errors import createLogFile
+            createLogFile(self.fileManager   , error, error.__traceback__, f"value={value}")
+            return None
 
     def value(self):
-        return self._value
+        try:
+            return self._value
+        except Exception as error:
+            from errors import createLogFile
+            createLogFile(self.fileManager   , error, error.__traceback__, f"value={getattr(self, '_value', 'undefined')}")
+            return None
 
     @property
     def digits(self):
-        return self._digits
+        try:
+            return self._digits
+        except Exception as error:
+            from errors import createLogFile
+            createLogFile(self.fileManager   , error, error.__traceback__, "digits property")
+            return None
 
     @classmethod
     def getDigits(self):
-        return self._digits
+        try:
+            return self._digits
+        except Exception as error:
+            from errors import createLogFile
+            createLogFile(self.fileManager   , error, error.__traceback__, "getDigits classmethod")
+            return None
 
     def base(self):
-        return self._base
+        try:
+            return self._base
+        except Exception as error:
+            from errors import createLogFile
+            createLogFile(self.fileManager   , error, error.__traceback__, "base method")
+            return None

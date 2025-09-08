@@ -17,8 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from Apps.DataVisualization import views #para las vistas de la app, n estabaan importadas por alguna razon
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("dataVisualization/", include("Apps.DataVisualization.urls")),
+
+    path('api/generate-points/', views.generate_line_points, name='api_generate_points'),
+    path('api/create-plot/', views.create_plot_image, name='api_create_plot'),
+    path('api/generate-and-plot/', views.generate_and_plot, name='api_generate_and_plot'),
+
 ]

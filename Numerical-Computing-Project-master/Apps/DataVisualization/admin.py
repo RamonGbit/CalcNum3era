@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import PlotResult
+from .models import IterationRun, DataPoint
 
-# Register your models here.
-
-admin.site.register(PlotResult)
+# Registramos los nuevos modelos para que aparezcan en el panel de administración.
+admin.site.register(IterationRun)
+admin.site.register(DataPoint)

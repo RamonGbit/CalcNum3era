@@ -1,27 +1,40 @@
 from django.db import models
 
-class PlotResult(models.Model):
-    point1X = models.FloatField(help_text="X component of the first point/vector.")
-    point1Y = models.FloatField(help_text="Y component of the first point/vector.")
-    point1Z = models.FloatField(help_text="Z component of the first point/vector.")
-
-    point2X = models.FloatField(help_text="X component of the second point/vector.")
-    point2Y = models.FloatField(help_text="Y component of the second point/vector.")
-    point2Z = models.FloatField(help_text="Z component of the second point/vector.")
-
-    point3X = models.FloatField(help_text="X component of the third point/vector.")
-    point3Y = models.FloatField(help_text="Y component of the third point/vector.")
-    point3Z = models.FloatField(help_text="Z component of the third point/vector.")
-
-    relativeError = models.FloatField(help_text="Relative error in this iteration.")
-
-    def __str__(self):
-        return (f"Plot Result: P1[{self.point1X:.2f},{self.point1Y:.2f},{self.point1Z:.2f}], "
-                f"P2[{self.point2X:.2f},{self.point2Y:.2f},{self.point2Z:.2f}], "
-                f"P3[{self.point3X:.2f},{self.point3Y:.2f},{self.point3Z:.2f}] "
-                f"- Relative Error: {self.relativeError:.2f}")
+class IterationRun(models.Model):
+    """
+    Representa una única ejecución o iteración del análisis.
+    """
+    timestamp = models.DateTimeField(
+        auto_now_add=True,
+        help_text="Fecha y hora en que se registró la iteración."
+    )
 
     class Meta:
-        verbose_name = "Plot Result"
-        verbose_name_plural = "Plot Results"
-        ordering = ['-id'] 
+        verbose_name = "Corrida de Iteración"
+        verbose_name_plural = "Corridas de Iteraciones"
+        ordering = ['-timestamp'] 
+
+    def __str__(self):
+        return f"Iteración registrada el {self.timestamp.strftime('%Y-%m-%d %H:%M:%S')}"
+
+
+class DataPoint(models.Model):
+    """
+    Representa un único punto de datos (X, Y) perteneciente a una iteración.
+    """
+    iteration_run = models.ForeignKey(
+        IterationRun,
+        related_name='data_points',
+        on_delete=models.CASCADE,
+        help_text="La corrida de iteración a la que pertenece este punto."
+    )
+    x_value = models.IntegerField(help_text="Coordenada X del punto.")
+    y_value = models.IntegerField(help_text="Coordenada Y del punto.")
+
+    class Meta:
+        verbose_name = "Punto de Dato"
+        verbose_name_plural = "Puntos de Datos"
+
+    def __str__(self):
+        return f"({self.x_value}, {self.y_value})"
+

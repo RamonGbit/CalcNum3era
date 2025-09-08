@@ -1,11 +1,16 @@
 from Apps.Common.Helpers.FileReaders.FileReader import FileReader
 from Apps.Common.Helpers.ErrorHandling.Exceptions import *
-from Apps.Common.Helpers.ErrorHandling.ErrorLogger import ErrorLogger
 from Apps.Common.Repositories.StudiedNumbers.StudiedNumber import StudiedNumber
 from Apps.Common.Composables.FileWriter import FileWriter
+from Apps.Common.Repositories.FileManager import FileManager
 import numpy as np
+from errors import createLogFile  # Importa createLogFile
 
 class NumberScanner:
+
+    path = ".\Apps\Common\Repositories\Errors"
+    fileManager = FileManager(path)
+
     def scanAnalizeAndWriteResults(self, fileName:str) -> None:
         fileWriter = FileWriter()
         readedFileSerial = fileName.split("_")[2].split(".")[0]
@@ -42,4 +47,4 @@ class NumberScanner:
                 except NoneType:
                     continue
                 except (ValueError, TypeError) as error:
-                    ErrorLogger.LogError(error)
+                    createLogFile(self, error, error.__traceback__, f"Posición [{i}][{j}]")

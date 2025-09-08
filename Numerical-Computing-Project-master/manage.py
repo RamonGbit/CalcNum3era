@@ -4,8 +4,17 @@ import os
 import sys
 
 
+
 def main():
     """Run administrative tasks."""
+    # Importar y configurar logging global
+    try:
+        from Apps.Common.utils import createLogFile
+        createLogFile()
+    except Exception as e:
+        # Si falla el logging, imprime un error
+        print(f"[WARNING] No se pudo inicializar el log global: {e}")
+
     os.environ.setdefault(
         "DJANGO_SETTINGS_MODULE", "NumericalComputingProject.settings"
     )

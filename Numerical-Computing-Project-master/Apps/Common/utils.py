@@ -1,3 +1,30 @@
+import logging
+import sys
+import traceback
+from datetime import datetime
+
+def createLogFile(log_filename: str = "app_error.log"):
+    """
+    Configura el sistema de logging para registrar errores y excepciones no controladas.
+    El log incluye timestamp, mensaje, módulo y stack trace.
+    """
+    logging.basicConfig(
+        level=logging.ERROR,
+        filename=log_filename,
+        filemode='a',
+        format='%(asctime)s | %(levelname)s | %(module)s | %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+
+    def handle_exception(exc_type, exc_value, exc_traceback):
+        if issubclass(exc_type, KeyboardInterrupt):
+            sys.__excepthook__(exc_type, exc_value, exc_traceback)
+            return
+        # Formato de stack trace
+        stack = ''.join(traceback.format_exception(exc_type, exc_value, exc_traceback))
+        logging.error(f"Excepción no controlada: {exc_value}\nStack trace:\n{stack}")
+
+    sys.excepthook = handle_exception
 import io
 import matplotlib 
 matplotlib.use('Agg') #usuario backend

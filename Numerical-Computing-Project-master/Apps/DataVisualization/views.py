@@ -10,7 +10,6 @@ from Apps.Common.Composables.MathReport import MathReport
 from Apps.Common.Helpers.FileReaders.NumberScanner import NumberScanner
 from datetime import datetime, timedelta
 import numpy as np
-
 from .Methods.RandomGraphUtils import *
 
 last_access_times = {}

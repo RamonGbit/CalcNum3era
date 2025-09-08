@@ -1,40 +1,23 @@
 from django.db import models
 
-class IterationRun(models.Model):
-    """
-    Representa una única ejecución o iteración del análisis.
-    """
-    timestamp = models.DateTimeField(
-        auto_now_add=True,
-        help_text="Fecha y hora en que se registró la iteración."
-    )
+class Punto(models.Model):
+    coordenada_x = models.IntegerField()
+    coordenada_y = models.IntegerField()
 
     class Meta:
-        verbose_name = "Corrida de Iteración"
-        verbose_name_plural = "Corridas de Iteraciones"
-        ordering = ['-timestamp'] 
+        unique_together = ('coordenada_x', 'coordenada_y')
 
     def __str__(self):
-        return f"Iteración registrada el {self.timestamp.strftime('%Y-%m-%d %H:%M:%S')}"
+        return f"({self.coordenada_x}, {self.coordenada_y})"
 
-
-class DataPoint(models.Model):
-    """
-    Representa un único punto de datos (X, Y) perteneciente a una iteración.
-    """
-    iteration_run = models.ForeignKey(
-        IterationRun,
-        related_name='data_points',
-        on_delete=models.CASCADE,
-        help_text="La corrida de iteración a la que pertenece este punto."
-    )
-    x_value = models.IntegerField(help_text="Coordenada X del punto.")
-    y_value = models.IntegerField(help_text="Coordenada Y del punto.")
+class Iteracion(models.Model):
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    puntos = models.ManyToManyField(Punto, related_name="iteraciones")
+    cantidad_errores = models.IntegerField(default=0)
+    grafica_image = models.ImageField(upload_to='graficas/', blank=True, null=True)
 
     class Meta:
-        verbose_name = "Punto de Dato"
-        verbose_name_plural = "Puntos de Datos"
+        ordering = ['-fecha_creacion']
 
     def __str__(self):
-        return f"({self.x_value}, {self.y_value})"
-
+        return f"Iteración del {self.fecha_creacion.strftime('%Y-%m-%d %H:%M:%S')}"

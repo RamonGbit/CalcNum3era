@@ -1,38 +1,30 @@
-from .models import IterationRun
+from .models import Iteracion
 
-def get_last_five_iterations():
+def get_last_five_iterations_m2m():
     """
-    Se conecta a la base de datos y recupera los puntos (X, Y) de las últimas
-    cinco IterationRun registradas.
-
-    Returns:
-        list[list[tuple[int, int]]]:
-        Un arreglo de arreglos de tuplas. Cada arreglo interno representa
-        una iteración y contiene las tuplas (x, y) de sus puntos.
-        Retorna una lista vacía si no hay iteraciones o en caso de error.
+    Recupera los datos de las últimas 5 iteraciones usando la nueva estructura Many-to-Many.
     """
-    print("Intentando obtener las últimas 5 iteraciones de la base de datos...")
     try:
-        # Recupera las últimas 5 iteraciones usando optimización 'prefetch_related'
-        last_five_runs = IterationRun.objects.prefetch_related('data_points').all()[:5]
+        print("Recuperando las últimas 5 iteraciones desde la base de datos...")
+        # 1. Obtenemos las últimas 5 iteraciones. El 'ordering' en el modelo ya las trae así.
+        iteraciones = Iteracion.objects.all()[:5]
 
-        if not last_five_runs:
-            print("No se encontraron iteraciones en la base de datos.")
-            return []
-
-        # Procesa los datos para organizarlos en el formato requerido
-        all_iterations_data = []
-        for run in last_five_runs:
-            iteration_points = [
-                (point.x_value, point.y_value) for point in run.data_points.all()
-            ]
-            all_iterations_data.append(iteration_points)
+        # 2. Usamos 'prefetch_related' para cargar todos los puntos de estas 5 iteraciones
+        # en una sola consulta adicional, lo cual es muy eficiente.
+        iteraciones = iteraciones.prefetch_related('puntos')
         
-        print(f"Se recuperaron {len(all_iterations_data)} iteraciones exitosamente.")
-        return all_iterations_data
+        resultado_final = []
+        for iteracion in iteraciones:
+            # 3. Para cada iteración, creamos la lista de tuplas (x, y)
+            puntos_de_la_iteracion = [
+                (punto.coordenada_x, punto.coordenada_y)
+                for punto in iteracion.puntos.all()
+            ]
+            resultado_final.append(puntos_de_la_iteracion)
+        
+        print("Recuperación completada.")
+        return resultado_final
 
     except Exception as e:
-        # Manejo de errores de conexión o consulta
-        print(f"Error al acceder a la base de datos: {e}")
-        return []
-
+        print(f"Error al conectar o consultar la base de datos: {e}")
+        return [] # Retornar una lista vacía en caso de error

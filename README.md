@@ -35,3 +35,4 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
 ### Estructura General
 
 - **Apps/**: Contiene las aplicaciones Django principales del sistema.
+    - **Common/**: Funcionalidades y utilidades compartidas.

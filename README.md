@@ -20,3 +20,4 @@ Esta aplicación web permite la generación, análisis y visualización de datos
 - **Resolución de Sistemas Numéricos:** Implementación del método de Gauss-Jordan para sistemas de ecuaciones lineales.
 - **Análisis Numérico Detallado:** Estudio de cifras significativas, validez y operaciones elementales de cada número.
 - **Reportes Formales:** Generación automática de archivos con matrices originales, resultados, soluciones y distancias.
+- **Trazabilidad y Registro de Errores:** Logging detallado de errores y resultados para auditoría y depuración.

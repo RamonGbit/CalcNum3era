@@ -38,3 +38,4 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
     - **Common/**: Funcionalidades y utilidades compartidas.
         - **Composables/**: Generación de datos, reportes y utilidades de escritura de archivos.
         - **Helpers/**: Conversores, manejo de errores, lectores de archivos y utilidades auxiliares.
+        - **Repositories/**: Modelos de datos matemáticos, errores calculados, números personalizados y estructuras de datos.

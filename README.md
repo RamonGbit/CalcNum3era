@@ -40,3 +40,4 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
         - **Helpers/**: Conversores, manejo de errores, lectores de archivos y utilidades auxiliares.
         - **Repositories/**: Modelos de datos matemáticos, errores calculados, números personalizados y estructuras de datos.
         - **Structures/**: Implementaciones de estructuras de datos como listas enlazadas, pilas y colas.
+    - **DataVisualization/**: Lógica de visualización y generación de gráficas. Incluye métodos para graficar y utilidades para generar puntos aleatorios y matrices.

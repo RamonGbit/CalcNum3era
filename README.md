@@ -136,3 +136,23 @@ En esta URL podrá visualizar la gráfica 3D de puntos generados aleatoriamente,
 Consulte el archivo `requirements.txt` para la lista completa de dependencias.
 
 ---
+
+## 📁 Estructura de Carpetas (Resumen)
+
+```text
+Numerical-Computing-Project/
+├── Apps/
+│   ├── Common/           # Utilidades, modelos y helpers compartidos
+│   ├── DataVisualization/ # Visualización y gráficas
+│   └── NumericalMethods/  # Métodos numéricos y algoritmos
+├── Storage/
+│   ├── Data/             # Archivos de entrada y fórmulas
+│   └── Results/          # Resultados y reportes generados
+├── NumericalComputingProject/ # Configuración principal Django
+├── manage.py             # Script de administración
+└── requirements.txt      # Dependencias del proyecto
+```
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo la licencia MIT.

@@ -2,6 +2,19 @@ from Apps.NumericalMethods.Solvers.EquationSolvers.AbstractEquationSolver import
 from Apps.Common.Repositories.FileManager import FileManager
 
 class BasicEquationSolver(AbstractEquationSolver):
+    """
+    Solucionador básico de ecuaciones matemáticas.
+
+    Hereda de AbstractEquationSolver e implementa la evaluación de operaciones aritméticas básicas (+, -, *, /, ^).
+
+    Métodos principales:
+    - _evaluateOperator(operator, operand1, operand2): Evalúa la operación entre dos operandos usando el operador dado.
+    - _getOperatorPrecedence(operator): Devuelve la precedencia del operador.
+
+    Atributos:
+    - operators: Diccionario de operadores y sus funciones asociadas.
+    - precedences: Diccionario de precedencias de operadores.
+    """
     path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):

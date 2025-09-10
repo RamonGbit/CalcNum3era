@@ -2,7 +2,7 @@ import numpy as np
 from Apps.Common.Repositories.FileManager import FileManager
 
 class MatrixValidator:
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def canAddOrSubtract(self, matrix_a, matrix_b):

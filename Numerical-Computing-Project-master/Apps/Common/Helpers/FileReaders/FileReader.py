@@ -7,7 +7,7 @@ from errors import createLogFile  # Importa createLogFile
 
 class FileReader:
 
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self):

@@ -4,7 +4,7 @@ from Apps.NumericalMethods.Solvers.MatrixOperators.MatrixDimensionsOperations im
 from Apps.Common.Repositories.FileManager import FileManager
 
 class DimensionsEquationSolver(AbstractEquationSolver):
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):
         try:

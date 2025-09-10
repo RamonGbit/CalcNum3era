@@ -5,7 +5,7 @@ from Apps.Common.Repositories.FileManager import FileManager
 
 class MatrixEquationGenerator:
 
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     @staticmethod

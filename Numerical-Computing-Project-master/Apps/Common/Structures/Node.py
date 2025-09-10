@@ -2,7 +2,7 @@ from __future__ import annotations
 from Apps.Common.Repositories.FileManager import FileManager
 
 class Node:
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self, data: any = None):

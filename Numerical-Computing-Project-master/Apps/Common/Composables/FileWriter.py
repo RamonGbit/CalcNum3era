@@ -8,7 +8,7 @@ from Apps.Common.Repositories.FileManager import FileManager
 from errors import createLogFile
 
 class FileWriter:
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self):

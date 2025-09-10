@@ -14,6 +14,7 @@ class FileManager:
     __path = os.getcwd()
 
     def __init__(self, path: str = os.getcwd()):
+        print(path)
         if len(path) == 0:
             raise Exception("Manage-Error: Debe ingresar una ruta")
         self.__path = self.__utilPath(path)
@@ -42,7 +43,7 @@ class FileManager:
             file = open(filePath, "rb")
             return file
         except FileNotFoundError as error:
-            from proccess.errors import createLogFile
+            from errors import createLogFile
             createLogFile(self, error, error.__traceback__, filePath)
             return None
 
@@ -79,7 +80,7 @@ class FileManager:
             file = open(filePath, "a")
             file.write(content)
         except FileNotFoundError as error:
-            from proccess.errors import createLogFile
+            from errors import createLogFile
             createLogFile(self, error, error.__traceback__, filePath)
 
     def __utilPath(self, path: str) -> str:

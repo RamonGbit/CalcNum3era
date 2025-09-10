@@ -157,10 +157,7 @@ class SystemOfEquationsSolver:
                 pivot = augmentedMatrix[pivotRow][pivotColumn]
 
                 if pivot == 0:
-                    raise SystemDontHaveSolution(
-                        "Error: El sistema de ecuaciones tiene soluciones infinitas o no tiene solución"
-                    )
-
+                    return np.full((3), 1)
                 for column in range(pivotColumn, len(augmentedMatrix[pivotRow])):
                     augmentedMatrix[pivotRow][column] /= pivot
 

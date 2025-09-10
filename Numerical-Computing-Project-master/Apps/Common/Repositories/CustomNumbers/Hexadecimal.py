@@ -7,7 +7,7 @@ class Hexadecimal(Number):
         ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
     )
     _base = len(_digits)
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self, value: str):

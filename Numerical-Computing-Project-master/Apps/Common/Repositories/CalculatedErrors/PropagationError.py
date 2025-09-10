@@ -4,7 +4,7 @@ from Apps.Common.Repositories.FileManager import FileManager
 
 class PropagationError(AbsoluteError, RelativeError):
 
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     __absoluteError: float = 0.0
     __relativeError: float = 0.0

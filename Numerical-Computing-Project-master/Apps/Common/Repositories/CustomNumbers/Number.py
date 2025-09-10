@@ -7,7 +7,7 @@ from Apps.Common.Repositories.FileManager import FileManager
 class Number(ABC):
     __digits = None
     __base = None
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self, value: str):

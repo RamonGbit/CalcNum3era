@@ -3,7 +3,7 @@ from Apps.NumericalMethods.Solvers.MatrixOperators.MatrixOperations import Matri
 from Apps.Common.Repositories.FileManager import FileManager
 
 class MatrixEquationSolver(AbstractEquationSolver):
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):
         try:

@@ -27,3 +27,7 @@ Esta aplicación web permite la generación, análisis y visualización de datos
 - **Interfaz Web Intuitiva:** Acceso centralizado a través de una URL para interactuar con todas las funcionalidades.
 
 ---
+
+## 🏗️ Arquitectura del Proyecto
+
+El proyecto está organizado en aplicaciones y módulos independientes, siguiendo buenas prácticas de Django y separación de responsabilidades:

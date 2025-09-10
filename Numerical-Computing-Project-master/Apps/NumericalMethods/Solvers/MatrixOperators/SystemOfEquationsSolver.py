@@ -3,6 +3,22 @@ import numpy as np
 from Apps.Common.Repositories.FileManager import FileManager
 
 class SystemOfEquationsSolver:
+    """
+    Clase para resolver sistemas de ecuaciones lineales por distintos métodos numéricos.
+
+    Permite resolver sistemas usando métodos como Gauss-Jordan (con diferentes tipos de pivoteo) y Gauss-Seidel.
+
+    Métodos principales:
+    - gaussJordanPartialPivoting(coefficients, independents): Resuelve usando Gauss-Jordan con pivoteo parcial.
+    - gaussJordanStaggeredPivoting(coefficients, independents): Resuelve usando Gauss-Jordan con pivoteo escalonado.
+    - gaussJordanFullPivoting(coefficients, independents): Resuelve usando Gauss-Jordan con pivoteo completo.
+    - gaussSeidel(coefficients, independents, ...): Resuelve usando el método iterativo de Gauss-Seidel.
+
+    Atributos:
+    - methodsToSolveSystem: Diccionario de métodos disponibles para resolver sistemas.
+    - path: Ruta para logs de errores.
+    - fileManager: Gestor de archivos para logs.
+    """
     path = ".\Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):

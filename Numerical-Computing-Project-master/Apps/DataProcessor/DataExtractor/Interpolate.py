@@ -6,6 +6,23 @@ import os
 import base64
 
 class Interpolator:
+    """
+    Clase para realizar interpolaciones y graficar conjuntos de datos.
+
+    Métodos principales:
+    - interpolate(graph_idx, x_new, kind): Interpola los datos usando el método especificado ('linear', 'cubic', 'lagrange').
+    - plot_interpolation(...): Genera y guarda una gráfica de interpolación para un conjunto de datos.
+    - plot_all_interpolations(...): Genera y muestra todas las gráficas de interpolación.
+
+    Atributos:
+    - data_list: Lista de tuplas (x, y) con los datos de entrada para cada gráfica.
+    - interpolators_linear: Interpoladores lineales para cada conjunto de datos.
+    - interpolators_cubic: Interpoladores cúbicos para cada conjunto de datos.
+    - interpolators_lagrange: Interpoladores de Lagrange para cada conjunto de datos.
+    - _xs, _ys: Listas de los valores únicos de x e y para cada conjunto de datos.
+    - max_global_lagrange_points: Máximo de puntos para interpolación de Lagrange global.
+    - lagrange_sample_points: Número de puntos de muestra para Lagrange si hay demasiados puntos.
+    """
     def __init__(self, data_list):
         
         if len(data_list) != 5:

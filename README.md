@@ -49,3 +49,12 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
 
 - **NumericalComputingProject/**: Configuración principal de Django (settings, urls, wsgi/asgi).
 - **manage.py**: Script de administración y entrada para comandos Django.
+
+
+### Flujo General
+
+1. **Generación de Datos:** Se crean matrices aleatorias y se almacenan en archivos.
+2. **Procesamiento Numérico:** Se resuelven sistemas de ecuaciones y se analizan los números.
+3. **Visualización:** Se grafican los puntos y distancias en 3D.
+4. **Reporte:** Se generan archivos formales con todos los resultados y análisis.
+5. **Interfaz Web:** El usuario accede a la URL principal para ver la gráfica y los resultados.

@@ -2,6 +2,20 @@ from Apps.Common.Helpers.ErrorHandling.Exceptions import *
 from Apps.Common.Repositories.FileManager import FileManager
 
 class MatrixDimensionsOperations:
+    """
+    Clase para operaciones sobre dimensiones de matrices.
+
+    Permite validar y calcular las dimensiones resultantes de operaciones matriciales como suma, resta y multiplicación.
+
+    Métodos principales:
+    - determineDimensionsOfAddition(matrix1_dims, matrix2_dims): Valida y retorna las dimensiones de la suma de dos matrices.
+    - determineDimensionsOfSubstraction(matrix1Dims, matrix2Dims): Valida y retorna las dimensiones de la resta de dos matrices.
+    - determineDimensionsOfMultiplication(matrix1Dims, matrix2Dims): Valida y retorna las dimensiones de la multiplicación de dos matrices.
+
+    Atributos:
+    - path: Ruta para logs de errores.
+    - fileManager: Gestor de archivos para logs.
+    """
     path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):

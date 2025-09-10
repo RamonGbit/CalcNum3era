@@ -44,6 +44,7 @@ class MatrixEquationSolver(AbstractEquationSolver):
                 raise ValueError(f"Error: Operador desconocido: {operator}")
             return self.operators[operator](operand1, operand2)
         except Exception as error:
+            
             from errors import createLogFile
             createLogFile(self.fileManager   , error, error.__traceback__, f"operator: {operator}, operand1_shape: {operand1.shape if hasattr(operand1, 'shape') else 'N/A'}, operand2_shape: {operand2.shape if hasattr(operand2, 'shape') else 'N/A'}")
             raise

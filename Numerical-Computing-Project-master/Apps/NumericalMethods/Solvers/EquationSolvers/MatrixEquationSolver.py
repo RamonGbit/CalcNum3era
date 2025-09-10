@@ -3,6 +3,20 @@ from Apps.NumericalMethods.Solvers.MatrixOperators.MatrixOperations import Matri
 from Apps.Common.Repositories.FileManager import FileManager
 
 class MatrixEquationSolver(AbstractEquationSolver):
+    """
+    Solucionador de ecuaciones para operaciones con matrices.
+
+    Hereda de AbstractEquationSolver e implementa la evaluación de operaciones de suma, resta y multiplicación de matrices.
+
+    Métodos principales:
+    - _evaluateOperator(operator, operand1, operand2): Evalúa la operación matricial entre dos operandos usando el operador dado.
+    - _getOperatorPrecedence(operator): Devuelve la precedencia del operador.
+
+    Atributos:
+    - matrixOperator: Instancia de MatrixOperations para operar sobre matrices.
+    - operators: Diccionario de operadores y sus funciones asociadas para matrices.
+    - precedences: Diccionario de precedencias de operadores.
+    """
     path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):

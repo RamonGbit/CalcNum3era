@@ -37,3 +37,4 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
 - **Apps/**: Contiene las aplicaciones Django principales del sistema.
     - **Common/**: Funcionalidades y utilidades compartidas.
         - **Composables/**: Generación de datos, reportes y utilidades de escritura de archivos.
+        - **Helpers/**: Conversores, manejo de errores, lectores de archivos y utilidades auxiliares.

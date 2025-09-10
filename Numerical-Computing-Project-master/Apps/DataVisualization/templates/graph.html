@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Acceso Excedido - Gráficas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #c00;
+        }
+        img {
+            max-width: 600px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h2>{{ alert_message }}</h2>
+
+    <h3>Gráficas de dispersión (submuestras):</h3>
+    {% for img in scatter_images %}
+        <img src="data:image/png;base64,{{ img }}" alt="Gráfica de dispersión" />
+    {% empty %}
+        <p>No hay gráficas de dispersión para mostrar.</p>
+    {% endfor %}
+
+    <h3>Interpolación Lineal:</h3>
+    <img src="data:image/png;base64,{{ linear_img }}" alt="Interpolación Lineal" />
+
+    <h3>Interpolación Cúbica:</h3>
+    <img src="data:image/png;base64,{{ cubic_img }}" alt="Interpolación Cúbica" />
+
+    <h3>Interpolación Lagrange:</h3>
+    <img src="data:image/png;base64,{{ lagrange_img }}" alt="Interpolación Lagrange" />
+</body>
+</html>

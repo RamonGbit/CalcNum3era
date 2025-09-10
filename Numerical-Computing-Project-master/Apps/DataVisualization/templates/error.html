@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eee; color: #721c24; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 80px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 32px; border: 1px solid #f5c6cb; }
+        h1 { color: #721c24; }
+        p { font-size: 1.2em; }
+        a { color: #721c24; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Ocurrió un error</h1>
+    <p>{{ error_message }}</p>
+    {% if traceback %}
+    <h2>Detalles técnicos:</h2>
+    <pre style="background:#f1f1f1; color:#c7254e; padding:12px; border-radius:6px; overflow-x:auto;">{{ traceback }}</pre>
+    {% endif %}
+    <p><a href="/">Volver al inicio</a></p>
+    </div>
+</body>
+</html>

@@ -2,14 +2,16 @@ import os
 import numpy as np
 from pathlib import Path
 from Apps.Common.Helpers.ErrorHandling.Exceptions import *
-from Apps.Common.Helpers.ErrorHandling.ErrorLogger import ErrorLogger
-
-
+from Apps.Common.Repositories.FileManager import FileManager
+from errors import createLogFile  # Importa createLogFile
 
 class FileReader:
 
+    path = "Apps\Common\Repositories\Errors"
+    fileManager = FileManager(path)
+
     def __init__(self):
-        self.__binaryFilesDir = Path("") 
+        self.__binaryFilesDir = Path("")
 
     def getFileList(self) -> np.ndarray:
         try:
@@ -21,14 +23,13 @@ class FileReader:
                 raise FileNotFoundError("No se encontraron archivos.")
 
         except FileNotFoundError as error:
-            ErrorLogger.LogError(error)
+            createLogFile(self, error, error.__traceback__, str(self.__binaryFilesDir))
             raise FileNotFoundError(
                 f"Error: No se ha encontrado archivos en el directorio {self.__binaryFilesDir}"
             )
 
         except NotADirectoryError as error:
-            ErrorLogger.LogError(error)
-
+            createLogFile(self, error, error.__traceback__, str(self.__binaryFilesDir))
             raise NotADirectoryError(
                 f"Error: {self.__binaryFilesDir} no es un directorio"
             )
@@ -82,7 +83,6 @@ class FileReader:
                     if len(content[j]) == 0:
                         continue
                     result_array[i][j] = content[j].strip()
-
 
                 i += 1
                 line = file.readline().decode("utf-8")

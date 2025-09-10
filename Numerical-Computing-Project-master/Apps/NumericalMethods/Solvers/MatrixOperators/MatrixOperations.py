@@ -4,6 +4,21 @@ from Apps.Common.Helpers.ErrorHandling.Exceptions import *
 from Apps.Common.Repositories.FileManager import FileManager
 
 class MatrixOperations:
+    """
+    Clase para realizar operaciones matemáticas básicas con matrices.
+
+    Permite sumar, restar y multiplicar matrices, validando dimensiones y utilizando numpy para los cálculos.
+
+    Métodos principales:
+    - add(matrixA, matrixB): Suma dos matrices si tienen las mismas dimensiones.
+    - subtract(matrixA, matrixB): Resta dos matrices si tienen las mismas dimensiones.
+    - multiply(matrixA, matrixB): Multiplica dos matrices si las dimensiones son compatibles.
+
+    Atributos:
+    - validator: Instancia de MatrixValidator para validar operaciones.
+    - path: Ruta para logs de errores.
+    - fileManager: Gestor de archivos para logs.
+    """
     path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 

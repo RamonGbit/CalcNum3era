@@ -4,6 +4,19 @@ from Apps.NumericalMethods.Solvers.MatrixOperators.MatrixDimensionsOperations im
 from Apps.Common.Repositories.FileManager import FileManager
 
 class DimensionsEquationSolver(AbstractEquationSolver):
+    """
+    Solucionador de ecuaciones para operaciones con dimensiones de matrices.
+
+    Hereda de AbstractEquationSolver e implementa la evaluación de operaciones de suma, resta y multiplicación de dimensiones de matrices.
+
+    Métodos principales:
+    - _evaluateOperator(operator, operand1, operand2): Evalúa la operación de dimensiones entre dos operandos usando el operador dado.
+
+    Atributos:
+    - matrixOperator: Instancia de MatrixDimensionsOperations para operar sobre dimensiones.
+    - operators: Diccionario de operadores y sus funciones asociadas para dimensiones.
+    - precedences: Diccionario de precedencias de operadores.
+    """
     path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):

@@ -58,3 +58,24 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
 3. **Visualización:** Se grafican los puntos y distancias en 3D.
 4. **Reporte:** Se generan archivos formales con todos los resultados y análisis.
 5. **Interfaz Web:** El usuario accede a la URL principal para ver la gráfica y los resultados.
+
+---
+
+## ⚙️ Instalación y Ejecución
+
+Siga estos pasos para configurar y ejecutar la aplicación en su entorno local:
+
+### 1. Pre-requisitos
+
+- **Python 3.9 o superior**
+- **pip** (gestor de paquetes de Python)
+- Se recomienda el uso de `virtualenv` para aislar dependencias.
+
+### 2. Clonar el Repositorio
+
+```bash
+git clone https://github.com/Abisaac1809/Numerical-Computing-Project.git
+cd Numerical-Computing-Project
+```
+
+### 3. Crear y Activar un Entorno Virtual

@@ -8,6 +8,25 @@ from Apps.Common.Repositories.FileManager import FileManager
 
 
 class AbstractEquationSolver(ABC):
+    """
+    Clase abstracta base para solucionadores de ecuaciones.
+
+    Define la estructura y métodos esenciales que deben implementar los solucionadores de ecuaciones concretos.
+
+    Métodos abstractos:
+    - _evaluateOperator(operator, operand1, operand2): Evalúa una operación entre operandos.
+    - _getOperatorPrecedence(operator): Devuelve la precedencia de un operador.
+
+    Métodos utilitarios:
+    - _isOperator(token): Verifica si un token es un operador válido.
+
+    Atributos:
+    - operators: Diccionario de operadores soportados.
+    - precedences: Diccionario de precedencias de operadores.
+    - brackets: Diccionario de paréntesis y corchetes.
+    - openBrackets, closeBrackets: Conjuntos de paréntesis/corchetes de apertura y cierre.
+    - variableChars: Conjunto de caracteres válidos para variables.
+    """
     path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     def __init__(self):

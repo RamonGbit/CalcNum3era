@@ -24,3 +24,6 @@ Esta aplicación web permite la generación, análisis y visualización de datos
 - **Reportes Formales:** Generación automática de archivos con matrices originales, resultados, soluciones y distancias.
 - **Trazabilidad y Registro de Errores:** Logging detallado de errores y resultados para auditoría y depuración.
 - **Monitoreo de Precisión:** Cálculo y almacenamiento de errores relativos para evaluar la calidad de los resultados.
+- **Interfaz Web Intuitiva:** Acceso centralizado a través de una URL para interactuar con todas las funcionalidades.
+
+---

@@ -110,3 +110,17 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+---
+
+## 🌐 Acceso a la Aplicación y Visualización de la Gráfica
+
+Una vez iniciado el servidor, acceda desde su navegador a:
+
+```
+http://localhost:8000/dataVisualization/randomGraph/
+```
+
+En esta URL podrá visualizar la gráfica 3D de puntos generados aleatoriamente, junto con los resultados numéricos y análisis detallados. Cada recarga genera nuevos datos y resultados.
+
+---

@@ -3,6 +3,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class DataDivision():
+    """
+    Clase para manejar la división y manipulación de datos numéricos desde un archivo.
+
+    Métodos principales:
+    - setRandomSample(muestra_size): Selecciona una muestra aleatoria de datos del archivo.
+    - setSplitInFive(arr): Divide un arreglo en cinco submuestras iguales.
+    - setSplitRandomArray(arr): Mezcla y divide un arreglo en dos partes iguales.
+    - getGraphic(arr1, arr2, i): Genera y guarda un gráfico de dispersión con línea de tendencia.
+    - getBestFitLine(x, y): Calcula la ecuación de la recta de mejor ajuste para dos arreglos.
+
+    Atributos:
+    - filepath: Ruta del archivo de datos.
+    - separador: Separador usado para dividir los datos en el archivo.
+    - muestra: Última muestra aleatoria seleccionada.
+    - submuestras: Últimas submuestras generadas.
+    """
     def __init__(self, filepath, separador='#'):
         if not filepath or not isinstance(filepath, str):
             raise ValueError("La ruta del archivo no puede estar vacía y debe ser un string.")

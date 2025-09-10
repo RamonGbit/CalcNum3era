@@ -2,7 +2,7 @@ from Apps.Common.Repositories.FileManager import FileManager
 
 class RelativeError:
     __value: float = 0.0
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self, exactValue: float, aproximatedValue: float):

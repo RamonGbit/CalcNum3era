@@ -14,7 +14,7 @@ class GraphVisualizer:
 
     @staticmethod
     def plotPointsAndDistances3D(pointsList):
-        path = ".\Apps\Common\Repositories\Errors"
+        path = "Apps\Common\Repositories\Errors"
         fileManager = FileManager(path)
         try:
             fig = plt.figure(figsize=(12, 10))

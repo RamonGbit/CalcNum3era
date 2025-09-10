@@ -5,7 +5,7 @@ from typing import Any
 from Apps.Common.Repositories.FileManager import FileManager
 
 
-def createLogFile(manager   : FileManager, error: Exception, trace: type(Exception.__traceback__), value: Any) -> None:
+def createLogFile(manager   : FileManager, error: Exception, trace: any, value: Any) -> None:
     tb = traceback.extract_tb(trace)
     oldPath = manager.getPath()
     manager.setRouter(".")

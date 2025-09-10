@@ -4,7 +4,7 @@ from Apps.Common.Repositories.FileManager import FileManager
 
 class Conversor:
 
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     @staticmethod

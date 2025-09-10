@@ -8,7 +8,7 @@ from errors import createLogFile  # Importa createLogFile
 
 class NumberScanner:
 
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def scanAnalizeAndWriteResults(self, fileName:str) -> None:

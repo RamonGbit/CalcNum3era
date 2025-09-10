@@ -7,7 +7,7 @@ from Apps.Common.Repositories.StudiedNumbers.Components.NumeralSystem import Num
 from Apps.Common.Repositories.FileManager import FileManager
 
 class ElementaryOperations:
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
     
     availableNumeralSystems: dict[str:Number] = {

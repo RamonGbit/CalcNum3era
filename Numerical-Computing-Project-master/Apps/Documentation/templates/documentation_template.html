@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<title>Documentación Matemática</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 40px;
+		}
+		h1, h2 {
+			color: #333;
+		}
+		.section {
+			margin-bottom: 30px;
+		}
+		ul {
+			list-style-type: square;
+		}
+	</style>
+</head>
+<body>
+	<h1><strong>Documentaci&oacute;n Matem&aacute;tica</strong></h1>
+	<hr />
+	<div class="section">
+		<h2>Distribuci&oacute;n de puntos por iteraci&oacute;n</h2>
+		{% for iter in iteraciones %}
+		<p><strong>{{ iter.nombre }}</strong></p>
+		<p>N&uacute;mero de puntos procesados: {{ iter.puntos }}</p>
+		<p>{{ iter.recta }}</p>
+	<img src="data:image/png;base64,{{ iter.imagen }}" alt="Imagen final" width="520" height="260" />
+		{% endfor %}
+		<h2>Interpolaci&oacute;n Total</h2>
+		<div class="section">
+			{% for interpolacion in interpolaciones %}
+			<h3>{{ interpolacion.tipo_interpolacion }}</h3>
+			<p>Tipo de interpolaci&oacute;n: {{ interpolacion.tipo_interpolacion }}</p>
+			<p>Puntos procesados: {{ interpolacion.total_puntos }}</p>
+			{% if interpolacion.tipo_interpolacion|lower == 'cubica' %}
+			<div class="formula-container" style="margin: 20px 0; padding: 12px; text-align: center; border: 1px solid #000; border-radius: 3px; background-color: #f9f9f9;">
+				<div class="formula-title" style="font-weight: bold; margin-bottom: 8px; color: #2c3e50; font-size: 13pt;">F&oacute;rmula General del Polinomio C&uacute;bico</div>
+				<div class="formula" style="font-size: 14pt; margin: 10px 0;">
+					P(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + a<sub>3</sub>x<sup>3</sup>
+				</div>
+			</div>
+			<div class="explanation" style="margin: 12px 0; padding: 8px; background-color: #f0f7ff; border-left: 3px solid #3498db;">
+				<p>La interpolaci&oacute;n c&uacute;bica es un m&eacute;todo que utiliza un polinomio de tercer grado para interpolar entre puntos. Requiere al menos 4 puntos conocidos y produce una curva m&aacute;s suave que la interpolaci&oacute;n lineal o cuadr&aacute;tica.</p>
+			</div>
+			<div class="components">
+				<div class="component">
+					<div class="component-title" style="font-weight: bold; color: #2c3e50; margin-bottom: 5px;">Donde:</div>
+					<p><span class="math-inline">a<sub>0</sub>, a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub></span> son los coeficientes del polinomio c&uacute;bico</p>
+					<p>Para encontrar estos coeficientes, necesitamos resolver un sistema de ecuaciones lineales</p>
+				</div>
+			</div>
+			{% endif %}
+			{% if interpolacion.tipo_interpolacion|lower == 'lineal' %}
+			<div class="formula-container" style="margin: 20px 0; padding: 12px; text-align: center; border: 1px solid #000; border-radius: 3px; background-color: #f9f9f9;">
+				<div class="formula-title" style="font-weight: bold; margin-bottom: 8px; color: #2c3e50; font-size: 13pt;">F&oacute;rmula de Interpolaci&oacute;n Lineal</div>
+				<div class="formula" style="font-size: 14pt; margin: 10px 0;">
+					y = y<sub>1</sub> + (y<sub>2</sub> - y<sub>1</sub>) &middot; [(x - x<sub>1</sub>) / (x<sub>2</sub> - x<sub>1</sub>)]
+				</div>
+			</div>
+			<div class="explanation" style="margin: 12px 0; padding: 8px; background-color: #f0f7ff; border-left: 3px solid #3498db;">
+				<p>La interpolaci&oacute;n lineal es un m&eacute;todo para estimar valores entre dos puntos conocidos, asumiendo que la relaci&oacute;n entre ellos es lineal.</p>
+			</div>
+			<div class="components">
+				<div class="component">
+					<div class="component-title" style="font-weight: bold; color: #2c3e50; margin-bottom: 5px;">Donde:</div>
+					<p><span class="math-inline">(x<sub>1</sub>, y<sub>1</sub>)</span> y <span class="math-inline">(x<sub>2</sub>, y<sub>2</sub>)</span> son los puntos conocidos</p>
+					<p><span class="math-inline">x</span> es el valor para el cual queremos estimar <span class="math-inline">y</span></p>
+					<p><span class="math-inline">y</span> es el valor interpolado resultante</p>
+				</div>
+			</div>
+			{% endif %}
+			{% if interpolacion.tipo_interpolacion|lower == 'lagrange' %}
+			<div class="formula-container" style="margin: 20px 0; padding: 12px; text-align: center; border: 1px solid #000; border-radius: 3px; background-color: #f9f9f9;">
+				<div class="formula-title" style="font-weight: bold; margin-bottom: 8px; color: #2c3e50; font-size: 13pt;">F&oacute;rmula de Interpolaci&oacute;n de Lagrange</div>
+				<div class="formula" style="font-size: 14pt; margin: 10px 0;">
+					P(x) = &Sigma; [y<sub>i</sub> &middot; L<sub>i</sub>(x)]
+				</div>
+				<div class="formula" style="font-size: 14pt; margin: 10px 0;">
+					L<sub>i</sub>(x) = &Pi; (x - x<sub>j</sub>) / (x<sub>i</sub> - x<sub>j</sub>) para j &ne; i
+				</div>
+			</div>
+			<div class="explanation" style="margin: 12px 0; padding: 8px; background-color: #f0f7ff; border-left: 3px solid #3498db;">
+				<p>La interpolaci&oacute;n de Lagrange es un m&eacute;todo para encontrar el polinomio de grado m&iacute;nimo que pasa por un conjunto de puntos dado.</p>
+			</div>
+			<div class="components">
+				<div class="component">
+					<div class="component-title" style="font-weight: bold; color: #2c3e50; margin-bottom: 5px;">Donde:</div>
+					<p><span class="math-inline" style="font-style: italic; font-family: serif;">P(x)</span> es el polinomio interpolador de Lagrange</p>
+					<p><span class="math-inline" style="font-style: italic; font-family: serif;">n</span> es el n&uacute;mero de puntos menos uno (grado del polinomio)</p>
+					<p><span class="math-inline" style="font-style: italic; font-family: serif;">(x<sub>i</sub>, y<sub>i</sub>)</span> son los puntos conocidos</p>
+					<p><span class="math-inline" style="font-style: italic; font-family: serif;">L<sub>i</sub>(x)</span> son los polinomios de Lagrange base</p>
+				</div>
+			</div>
+			{% endif %}
+			<p><img src="data:image/png;base64,{{ interpolacion.imagen_interpolacion }}" alt="Imagen {{ interpolacion.tipo_interpolacion }}" width="520" height="260" /></p>
+			{% endfor %}
+		</div>
+		<h2>Errores por Iteraci&oacute;n</h2>
+		<ul>
+			{% for iter in iteraciones %}
+				<li>{{ iter.nombre }}: {{ iter.errores }} errores</li>
+			{% endfor %}
+		</ul>
+		<div class="section">
+			<h2>Resultados</h2>
+			<ul>
+				<li>Suma total de errores: {{ sumatoria }}</li>
+				<li>Promedio de errores: {{ promedio }}</li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2>Distribuci&oacute;n Normal de los Errores</h2>
+			<p>La distribuci&oacute;n queda definida por:</p>
+			<ul>
+				<li>&mu; (media) = {{ media }} errores</li>
+				<li>&sigma; (desviaci&oacute;n) &asymp; {{ desviacion }} errores</li>
+			</ul>
+		</div>
+		<div class="section">
+			<h2>Rangos Clave</h2>
+			<p>Seg&uacute;n los c&aacute;lculos, podemos deducir que el programa tendr&aacute; el siguiente comportamiento:</p>
+			<ul>
+				<li>El 68% de las iteraciones tendr&aacute; entre {{ rango_68.inferior }} y {{ rango_68.superior }} errores</li>
+				<li>El 95% de las iteraciones tendr&aacute; entre {{ rango_95.inferior }} y {{ rango_95.superior }} errores</li>
+				<li>El 98% de las iteraciones tendr&aacute; entre {{ rango_98.inferior }} y {{ rango_98.superior }} errores</li>
+			</ul>
+			<h2>Gr&aacute;fica de la Distribuci&oacute;n</h2>
+			<img src="data:image/png;base64,{{ imagen_distribucion }}" alt="Imagen final" width="520" height="260" /></div>
+		</body>
+		</html>
+		

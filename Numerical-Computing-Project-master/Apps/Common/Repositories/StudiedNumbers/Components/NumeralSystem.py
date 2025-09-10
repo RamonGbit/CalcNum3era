@@ -2,7 +2,7 @@ from Apps.Common.Structures.LinkedList import LinkedList
 from Apps.Common.Repositories.FileManager import FileManager
 
 class NumeralSystem:
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self, value: str):

@@ -2,7 +2,7 @@ from Apps.Common.Structures.Node import Node
 from Apps.Common.Repositories.FileManager import FileManager
 
 class Queue:
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self):

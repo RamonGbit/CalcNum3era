@@ -5,7 +5,7 @@ from Apps.Common.Repositories.FileManager import FileManager
 class TruncationError(AbsoluteError, RelativeError):
     __absoluteError: float = 0.0
     __relativeError: float = 0.0
-    path = ".\Apps\Common\Repositories\Errors"
+    path = "Apps\Common\Repositories\Errors"
     fileManager = FileManager(path)
 
     def __init__(self, exactValue: float, aproximatedValue: float):

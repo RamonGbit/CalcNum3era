@@ -124,3 +124,15 @@ http://localhost:8000/dataVisualization/randomGraph/
 En esta URL podrá visualizar la gráfica 3D de puntos generados aleatoriamente, junto con los resultados numéricos y análisis detallados. Cada recarga genera nuevos datos y resultados.
 
 ---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Python** (>=3.9)
+- **Django** (5.2.4)
+- **NumPy** (2.2.6)
+- **Matplotlib** (3.10.3)
+- **SQLite** (base de datos por defecto de Django)
+
+Consulte el archivo `requirements.txt` para la lista completa de dependencias.
+
+---

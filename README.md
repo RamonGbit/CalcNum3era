@@ -31,3 +31,7 @@ Esta aplicación web permite la generación, análisis y visualización de datos
 ## 🏗️ Arquitectura del Proyecto
 
 El proyecto está organizado en aplicaciones y módulos independientes, siguiendo buenas prácticas de Django y separación de responsabilidades:
+
+### Estructura General
+
+- **Apps/**: Contiene las aplicaciones Django principales del sistema.

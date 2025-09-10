@@ -44,3 +44,4 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
     - **NumericalMethods/**: Métodos numéricos y algoritmos para la resolución de ecuaciones y operaciones matriciales.
 
 - **Storage/**: Carpeta para archivos de entrada (matrices, fórmulas) y resultados generados (reportes, logs, soluciones).
+    - **Data/**: Archivos de datos de entrada y fórmulas.

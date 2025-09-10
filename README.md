@@ -11,3 +11,9 @@ Integración de herramientas matemáticas computacionales para resolver operacio
 ## 🚀 Acerca del Proyecto
 
 Esta aplicación web permite la generación, análisis y visualización de datos numéricos, resolviendo sistemas de ecuaciones lineales mediante el método de Gauss-Jordan y mostrando gráficas 3D de puntos generados aleatoriamente. El sistema está diseñado para ser robusto, trazable y fácil de usar, facilitando el estudio y la experimentación con métodos numéricos.
+
+---
+
+## ✨ Características Principales
+
+- **Visualización Dinámica:** Gráficas 3D interactivas de puntos generados aleatoriamente.

@@ -17,3 +17,4 @@ Esta aplicación web permite la generación, análisis y visualización de datos
 ## ✨ Características Principales
 
 - **Visualización Dinámica:** Gráficas 3D interactivas de puntos generados aleatoriamente.
+- **Resolución de Sistemas Numéricos:** Implementación del método de Gauss-Jordan para sistemas de ecuaciones lineales.

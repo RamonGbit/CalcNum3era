@@ -42,3 +42,5 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
         - **Structures/**: Implementaciones de estructuras de datos como listas enlazadas, pilas y colas.
     - **DataVisualization/**: Lógica de visualización y generación de gráficas. Incluye métodos para graficar y utilidades para generar puntos aleatorios y matrices.
     - **NumericalMethods/**: Métodos numéricos y algoritmos para la resolución de ecuaciones y operaciones matriciales.
+
+- **Storage/**: Carpeta para archivos de entrada (matrices, fórmulas) y resultados generados (reportes, logs, soluciones).

@@ -45,3 +45,4 @@ El proyecto está organizado en aplicaciones y módulos independientes, siguiend
 
 - **Storage/**: Carpeta para archivos de entrada (matrices, fórmulas) y resultados generados (reportes, logs, soluciones).
     - **Data/**: Archivos de datos de entrada y fórmulas.
+        - **Results/**: Resultados, reportes y logs generados por el sistema.

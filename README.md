@@ -79,3 +79,34 @@ cd Numerical-Computing-Project
 ```
 
 ### 3. Crear y Activar un Entorno Virtual
+
+```bash
+# Instalar virtualenv si no lo tiene
+pip install virtualenv
+
+# Crear el entorno virtual
+virtualenv env
+
+# Activar el entorno virtual (Windows)
+.\env\Scripts\activate
+# En macOS/Linux
+# source env/bin/activate
+```
+
+### 4. Instalar Dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Migrar la Base de Datos (solo la primera vez)
+
+```bash
+python manage.py migrate
+```
+
+### 6. Ejecutar el Servidor de Desarrollo
+
+```bash
+python manage.py runserver
+```

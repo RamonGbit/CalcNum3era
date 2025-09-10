@@ -19,3 +19,4 @@ Esta aplicación web permite la generación, análisis y visualización de datos
 - **Visualización Dinámica:** Gráficas 3D interactivas de puntos generados aleatoriamente.
 - **Resolución de Sistemas Numéricos:** Implementación del método de Gauss-Jordan para sistemas de ecuaciones lineales.
 - **Análisis Numérico Detallado:** Estudio de cifras significativas, validez y operaciones elementales de cada número.
+- **Reportes Formales:** Generación automática de archivos con matrices originales, resultados, soluciones y distancias.

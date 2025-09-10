@@ -8,6 +8,8 @@
 
 Integración de herramientas matemáticas computacionales para resolver operaciones numéricas y visualizarlas de forma interactiva usando Python y Django.
 
+---
+
 ## 🚀 Acerca del Proyecto
 
 Esta aplicación web permite la generación, análisis y visualización de datos numéricos, resolviendo sistemas de ecuaciones lineales mediante el método de Gauss-Jordan y mostrando gráficas 3D de puntos generados aleatoriamente. El sistema está diseñado para ser robusto, trazable y fácil de usar, facilitando el estudio y la experimentación con métodos numéricos.
@@ -21,3 +23,4 @@ Esta aplicación web permite la generación, análisis y visualización de datos
 - **Análisis Numérico Detallado:** Estudio de cifras significativas, validez y operaciones elementales de cada número.
 - **Reportes Formales:** Generación automática de archivos con matrices originales, resultados, soluciones y distancias.
 - **Trazabilidad y Registro de Errores:** Logging detallado de errores y resultados para auditoría y depuración.
+- **Monitoreo de Precisión:** Cálculo y almacenamiento de errores relativos para evaluar la calidad de los resultados.
